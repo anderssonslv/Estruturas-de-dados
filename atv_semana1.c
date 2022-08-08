@@ -58,9 +58,6 @@ float CalculaPeso(){
 
 
 int main (){
-    CalculaMaior();
-    Contagem();
-    printf("%d",PositivoNegativo(5));
     printf("Seu peso ideal é: %.2f",CalculaPeso());
 }
 
