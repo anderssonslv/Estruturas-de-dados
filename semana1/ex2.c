@@ -38,13 +38,11 @@ void Remove () {
 
     printf("%d   %d", nomes , p);
 
-    int j=0;
     for (int i=0; i<strlen(nomes);i++){
         char c = entrada[j];
 
         if (nomes >= p){
             strtok(nomes[i],c);//parece q strtok n le char
-            j++;
         }
         nomes++;
     }
