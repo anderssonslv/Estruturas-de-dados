@@ -42,7 +42,7 @@ void Remove () {
         char c = entrada[j];
 
         if (nomes >= p){
-            strtok(nomes[i],c);//parece q strtok n le char
+            strtok(nomes[i],c);
         }
         nomes++;
     }
