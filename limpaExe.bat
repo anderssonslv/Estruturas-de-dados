@@ -1,0 +1,10 @@
+cd C:\Users\ander\OneDrive\Documentos\prog\aed\debug\
+erase *.exe
+cd C:\Users\ander\OneDrive\Documentos\prog\aed\ex\
+erase *.exe
+cd C:\Users\ander\OneDrive\Documentos\prog\aed\lixo\
+erase *.exe
+cd C:\Users\ander\OneDrive\Documentos\prog\aed\semana1\
+erase *.exe
+cd C:\Users\ander\OneDrive\Documentos\prog\aed\semana2\
+erase *.exe

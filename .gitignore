@@ -1,6 +1,7 @@
 lixo/
 debug/
-semana2/teste/
-discordColegas/
+ex/
 *.exe
 .vscode/
+semana2/teste/
+limpaExe.bat/
