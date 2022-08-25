@@ -7,12 +7,22 @@ typedef struct {
 	int altura;
 }Pessoa;
 
-int tot = 0;
+int nPessoas = 0;
 
-Pessoa *Adiciona(Pessoa *pBuffer){
-	if (tot>0)(
-		pBuffer = (Pessoa*) realloc(pBuffer,(sizeof(Pessoa)*(tot*2))));
-	Pessoa p;
+void Lista (Pessoa *pBuffer){
+	for (int i = 0; i < nPessoas; i++){
+		printf("\nNome: %s",(char *)pBuffer);
+		printf("\nIdade: %d",pBuffer->idade);
+		printf("\nAltura: %d\n",pBuffer->altura);
+		pBuffer+=sizeof(Pessoa);
+	}
+	system("pause");
+}
+
+Pessoa *Adiciona (Pessoa *ptr){
+	if (nPessoas>4)
+		ptr = (Pessoa*) realloc(ptr,(sizeof(Pessoa)*(nPessoas+1)));
+	Pessoa  p;
 	printf("\nDigite o nome: ");
 	scanf("%s",p.nome);
 	printf("\nDigite idade: ");
@@ -20,19 +30,20 @@ Pessoa *Adiciona(Pessoa *pBuffer){
 	printf("\nDigite Altura: ");
 	scanf("%d",&p.altura);
 
-	pBuffer+=(tot*sizeof(Pessoa));
-	*pBuffer=p;
-	pBuffer-=(tot*sizeof(Pessoa));//eu tava esquecendo de decrementar
-	tot++;
-	return (Pessoa *)pBuffer;
+	
+	ptr+=(sizeof(Pessoa)*nPessoas);//anda o numero de casas e dps volta pro inicio
+	*ptr=p;//Da segmentation fault na 8/9ª pessoa independente de usar realoc ou não, e independente do número inicial q eu alocar
+	ptr-=(sizeof(Pessoa)*nPessoas);
+
+	nPessoas++;
+	return ptr;
 }
 
-int main () { system("cls");
-	//Pessoa *pBuffer = malloc (sizeof(Pessoa)*1);
+int main () { 
 	Pessoa *pBuffer = malloc (sizeof(Pessoa)*5);
 	int op;
 	
-	while ( 1 ) {
+	while ( 1 ) { system("cls");
 		printf("\n1 Para adicionar");
 		printf("\n0 Para listar e sair\n");
 		scanf ("%d",&op);
@@ -46,25 +57,3 @@ int main () { system("cls");
 		}
 	}
 }
-
-
-/*
-	pBuffer+=(tot*sizeof(Pessoa));
-	pBuffer=p.nome;
-	pBuffer+=sizeof(char)*30;
-	pBuffer=p.idade;
-*/
-	//*(int*)pBuffer->altura=*(int *)p.altura;
-
-
-/*
-void Lista (Pessoa *pBuffer){
-	for (int i = 0; i < tot; i++){
-		printf("\nNome: %s",(char *)pBuffer);
-		printf("\nIdade: %d",pBuffer->idade);
-		printf("\nAltura: %d\n",pBuffer->altura);
-		pBuffer+=sizeof(Pessoa);
-	}
-	system("pause");
-}
-*/
