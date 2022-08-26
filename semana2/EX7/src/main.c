@@ -9,12 +9,13 @@ typedef struct {
 
 Pessoa pessoas[10];
 
+
 void Adiciona(void *pBuffer){
 	int *nPessoas = (int *)(pBuffer+sizeof(int));
 
 	if (*nPessoas==10)
 		printf("Lista cheia!");
-	else{
+	else {
 		printf("\nDigite nome: ");
 		scanf("%s",&pessoas[*nPessoas].nome);
 		printf("\nDigite idade: ");
@@ -24,6 +25,9 @@ void Adiciona(void *pBuffer){
 		*nPessoas+=1;//se eu colocar *nPessoas++ ele pula a memoria
 	}
 }
+
+
+
 void Lista(void *pBuffer){
 	int *i = (int *)(pBuffer+sizeof(int)*2);
 	int *tam = (int *)(pBuffer+sizeof(int));
