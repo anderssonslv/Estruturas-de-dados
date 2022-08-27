@@ -23,21 +23,26 @@ void Remove (void *pBuffer){
 	int bufferSize = (int) strlen((int*)pBuffer);
 	int nameSize = (int) strlen(nome);
 
+
 	if (!p){
-		printf("\nnão encontrado");
+		printf("\nnão encontrado"); 
 		return;
 	}
+
 	for (i = 0; i < bufferSize; i++){
 		if (pBuffer==p){
-			*(char*)pBuffer=*(char*)(pBuffer+nameSize);
+			for (int c = 0; c < nameSize; c++) {/*
+				while ((char*)pBuffer!='\0'){
+					*(char*)pBuffer = *(char*) (pBuffer+nameSize);
+				}
+				*/
+
+				pBuffer++;
+			}
 			break;
 		}
 		pBuffer++;
 	}
-	pBuffer-=i-1;
-	pBuffer+=bufferSize;
-	pBuffer-=nameSize+1;
-	*(char*)pBuffer='\0';
 }
 
 int main (){ 
