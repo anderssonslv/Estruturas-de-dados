@@ -50,11 +50,11 @@ int main () {system("cls");
 		exit(0);
 	}
 
-	*(int*)pBuffer=0;
-	pBuffer+=sizeof(int);//o primeiro serve pra escolha do menu
+	*(int*)pBuffer=0;//o primeiro serve pra escolha do menu
+	pBuffer+=sizeof(int);
 	*(int*)pBuffer=0;//o segundo int é um contador de pessoas
 	pBuffer+=sizeof(int);
-	*(int*)pBuffer=0;
+	*(int*)pBuffer=0;//o terceiro é um contador para um for
 	pBuffer-=sizeof(int);//volta pro inicio
 	pBuffer-=sizeof(int);
 

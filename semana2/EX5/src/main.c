@@ -32,7 +32,7 @@ Pessoa *Adiciona (Pessoa *ptr){
 
 	
 	ptr+=(sizeof(Pessoa)*nPessoas);//anda o numero de casas e dps volta pro inicio
-	*ptr=p;//Da segmentation fault na 8/9ª pessoa independente de usar realoc ou não, e independente do número inicial q eu alocar
+	*ptr=p;
 	ptr-=(sizeof(Pessoa)*nPessoas);
 
 	nPessoas++;
