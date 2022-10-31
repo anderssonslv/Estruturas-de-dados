@@ -92,10 +92,10 @@ int main()
 {
   Tree* t = createTree(); /* cria uma árvore */
   
-  insertTree(&t, 12); /* insere o elemento 12 na árvore */
-  insertTree(&t, 15); /* insere o elemento 15 na árvore */
-  insertTree(&t, 10); /* insere o elemento 10 na árvore */
-  insertTree(&t, 13); /* insere o elemento 13 na árvore */
+  insertTree(&t, 34); /* insere o elemento 12 na árvore */
+  insertTree(&t, 84); /* insere o elemento 15 na árvore */
+  insertTree(&t, 15); /* insere o elemento 10 na árvore */
+  insertTree(&t, 0); /* insere o elemento 13 na árvore */
    
   showTree(t); /* Mostra os elementos da árvore em pré-ordem */
   
