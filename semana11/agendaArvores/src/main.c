@@ -122,26 +122,4 @@ int main(int argc,char *argv[]) { system("cls");
 		Push (&root,createPerson(argv));
 		c+=3;
 	}
-
-	char NOMEE[5]  = {'A','l','a','n','\0'};
-
-	root = Pop(&root,NOMEE);
-
-	/*
-	while (1) {
-		printf("\n1 Push \n2 List \n3 Pop \n4 Reset");
-		switch ( getchar() ) {
-			case '1':
-				Push(root,createPerson(NULL));
-				break;
-			case '2':
-				List(root);
-			break;
-			default:
-				break;
-		}
-		fflush(stdin);
-	}
-	*/
-
 }

@@ -1,7 +1,4 @@
 #include "source.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int maior (int a, int b) {
     return a>b? a:b;
@@ -30,28 +27,25 @@ int Balanceamento(Node** root) {
 		return 0;
 }
 
-void RSD(Node **root){
-    Node *no;
 
-    no = (*root)->L;
-    (*root)->L = no->R;
+void RSE(Node **root){
+    Node *no = (*root)->R; // no aponta para a subárvore direita da raiz root
+    (*root)->R = no->L;
+    no->L = *root; // o filho L de no passa a ser a raiz root
 
-    no->R = *root;
-
+    // recalcula a altura dos nós que foram movimentados
     (*root)->alt = maior(altura((*root)->L), altura((*root)->R)) + 1;
     no->alt = maior(altura(no->L), altura(no->R)) + 1;
 
     *root = no;
 }
 
-void RSE(Node **root){
-    Node *no;
+void RSD(Node **root){
+    Node *no = (*root)->L;
+    (*root)->L = no->R;
 
-    no = (*root)->R; // no aponta para a subárvore direita da raiz root
-    (*root)->R = no->L;
-    no->L = *root; // o filho L de no passa a ser a raiz root
+    no->R = *root;
 
-    // recalcula a altura dos nós que foram movimentados
     (*root)->alt = maior(altura((*root)->L), altura((*root)->R)) + 1;
     no->alt = maior(altura(no->L), altura(no->R)) + 1;
 
