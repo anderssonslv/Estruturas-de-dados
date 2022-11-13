@@ -38,18 +38,19 @@ int majorityElement (int* nums, int numsSize) {
 	int times = 1;
 
 	for (int i = 0; i < numsSize; i++) {
+		if (i>0 && i == i-1) continue;
 		for (int j = i+1; j < numsSize; j++){
-			if (nums[i] == nums [j]){
+			if (nums[i] == nums [j])
 				times++;
-			}
-			if (times > numsSize/2)
+			if (times >= numsSize/2)
 				return nums[i];
 		}
 	}
+	return 0;
 }
 
 int main() {
-	int nums [5] = {1,1,1,2,7};
+	int nums [7] = {2,2,1,1,1,2,2};
 
-	printf("\n%d",majorityElement(nums,5));
+	printf("\n%d",majorityElement(nums,7));
 }
