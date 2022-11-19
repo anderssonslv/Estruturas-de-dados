@@ -52,9 +52,24 @@ int majorityElement (int* nums, int numsSize) {
 	return 0;
 }
 
-int main(int argc, int *argv []) {
-	printf ("%d , %s",argc,argv[1]);
-	int nums [3] = {5,5,6};
+int main() {
+	FILE *arq;
+	arq = fopen("dados.txt","r");
+
+	char *dados = (char *) malloc (100000 * sizeof(char));
+
+	fgets(dados,100000,arq);
+
+	int *filtro = (int *) malloc (50000 * sizeof (int));
+
+	int c = 0;
+	for (int i=0; i<99999; i++){
+		if ((int)dados[i] != 44){
+			filtro[c] = atoi(dados[i]);
+			printf("%d",filtro[c]);
+			c++;
+		}
+	}
 
 	//printf("\n%d",majorityElement(nums,3));
 }
